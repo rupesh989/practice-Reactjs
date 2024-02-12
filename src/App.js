@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from "./logo.svg";
+import "./App.css";
+import React, { useState } from "react";
+import Navbar from "./component/navbar";
+import ProductList from "./component/productList.js";
+// import Footer from "./component/footer.js";
+import product from "./component/product.js";
 
 function App() {
+  const productList = [
+    {
+      price: 99999,
+      name: "Iphone 10S Max",
+      qauntity: 0,
+    },
+    {
+      price: 9999,
+      name: "Redmi note 10S Max",
+      qauntity: 10,
+    },
+  ];
+  // let [productList, setProductList] = useState(products);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <main className="container m-t5">
+        <ProductList productList={productList} />
+      </main>
+      {/* <Footer /> */}
+    </>
   );
 }
 
